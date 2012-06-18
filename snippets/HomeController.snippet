@@ -1,4 +1,14 @@
-public ActionResult SendMessage(string msg)
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>
+                SendMessage
+            </Title>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[public ActionResult SendMessage(string msg)
 {
     // Create Queue Client
     var queueClient = QueueClient.Create("devcamps");
@@ -9,4 +19,8 @@ public ActionResult SendMessage(string msg)
 
     // Redisplay home-page
     return RedirectToAction("Index");
-}
+}]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
