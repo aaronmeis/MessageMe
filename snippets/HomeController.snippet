@@ -1,0 +1,12 @@
+public ActionResult SendMessage(string msg)
+{
+    // Create Queue Client
+    var queueClient = QueueClient.Create("devcamps");
+
+    // Create and Send Message to Queue
+    var brokeredMessage = new BrokeredMessage(msg);
+    queueClient.Send(brokeredMessage);
+
+    // Redisplay home-page
+    return RedirectToAction("Index");
+}
