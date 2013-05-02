@@ -22,7 +22,7 @@ namespace MessageScott.Controllers
         public ActionResult SendMessage(string msg)
         {
             // Create Queue Client
-            var queueClient = QueueClient.Create("scott");
+            var queueClient = QueueClient.Create("chat");
 
             // Create and Send Message to Queue
             var brokeredMessage = new BrokeredMessage(msg);

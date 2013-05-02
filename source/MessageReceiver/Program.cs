@@ -9,24 +9,15 @@ namespace MessageReceiver
 {
     class Program
     {
-        static void Main(string[] args) {
+        static void Main(string[] args)
+        {
+            QueueClient client = QueueClient.Create("chat");
+            client.OnMessage((message) =>
+            {
+                Console.WriteLine(message.GetBody<string>());
+            });
 
-            QueueClient client = QueueClient.Create("scott");
-
-            while (true) {
-
-                var message = client.Receive();
-                if (message != null) {
-
-                    try {
-
-                        Console.WriteLine(message.GetBody<string>());
-                    }
-                    finally {
-                        message.Complete();
-                    }
-                }
-            }
+            Console.ReadKey();
         }
     }
 }
